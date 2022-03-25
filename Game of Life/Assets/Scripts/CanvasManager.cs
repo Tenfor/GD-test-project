@@ -34,9 +34,7 @@ public class CanvasManager : MonoBehaviour
     }
     void OnPlayButtonClick(){
         GameManager.SimulationToggle();
-        // string buttonText = GameManager.IsPlaying() ? "Stop" : "Play";
         _playButton.gameObject.GetComponent<Image>().sprite = GameManager.IsPlaying() ? _stopIcon : _playIcon;
-        // _playButton.GetComponentInChildren<TextMeshProUGUI>().text = buttonText;
     }
     void OnSaveButtonClick(){
         GameManager.SaveGrid();
@@ -60,7 +58,6 @@ public class CanvasManager : MonoBehaviour
         _setButton.interactable = true;
     }
     void OnRandomizeButtonClick(){
-        print("randomize");
         GameManager.RandomizeGrid();
     }
 }

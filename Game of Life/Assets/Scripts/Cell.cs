@@ -31,9 +31,6 @@ public class Cell : MonoBehaviour
     public void SetGridPosition(int row, int col){
         gridPosition = new GridPosition(row,col);
     }
-    // public bool CheckGridPosition(int row, int col){
-    //     return gridPosition.row == row && gridPosition.col == col;
-    // }
     public void SetHighlight(bool l){
         highlighted = l;
         Redraw();
