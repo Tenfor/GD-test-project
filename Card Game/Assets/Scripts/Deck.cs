@@ -30,10 +30,8 @@ public class Deck : MonoBehaviour
     }
     public void DrawCard(){
         if(Hand.Count == 5 || cards.Count == 0) return; 
-      
         Card card = GetRandomCard();
         card.gameObject.SetActive(true);
-
         Hand.Add(card);
         card.handIndex = Hand.Count-1;
         MoveCardsToPosition();        
@@ -51,22 +49,7 @@ public class Deck : MonoBehaviour
         cards.RemoveAt(index);
         return card;
     }
-    void OnMouseDown()
-    {
-        DrawCard();
-    }
     public void ResetHandIndexes(){
-        // print("resetHand");
-        // List<int> indexesToRemove = new List<int>();
-        // for (int i = 0; i < Hand.Count; i++)
-        // {
-        //     print(Hand[i]);
-        //    if(Hand[i] == null) indexesToRemove.Add(i);
-        // }
-        // indexesToRemove.ForEach(index=>{
-        //     print(index);
-        //     Hand.RemoveAt(index);
-        // });
         for (int i = 0; i < Hand.Count; i++)
         {
             Hand[i].handIndex = i;

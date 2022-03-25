@@ -30,19 +30,6 @@ public class GameManager : MonoBehaviour
         if(gm == null) return;
         deck = d;
     }
-    public static void SimulationToggle(){
-        if(gridManager.playing) gridManager.StopSimulation();
-        else gridManager.PlaySimulation();
-    }
-    // public static void SaveGrid(){
-    //     gridManager.SaveGrid();
-    // }
-    // public static void LoadGrid(){
-    //     gridManager.LoadGrid();
-    // }
-    public static void ClearGrid(){
-        gridManager.ClearGrid();
-    }
     public static bool IsPlaying(){
         return gridManager.playing;
     }
@@ -53,12 +40,6 @@ public class GameManager : MonoBehaviour
     public static void ActivateHighlights(){
         gridManager.ActivateHighlights();
     }
-    // public static void SetGrid(int row, int col){
-    //     gridManager.SetGrid(row,col);
-    // }
-    // public static void RandomizeGrid(){
-    //     gridManager.RandomizeGrid();
-    // }
     public static void PlayCard(int index){
         deck.PlayCard(index);
     }

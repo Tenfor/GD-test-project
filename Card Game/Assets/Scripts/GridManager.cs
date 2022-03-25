@@ -116,32 +116,6 @@ public class GridManager : MonoBehaviour
             cell.Redraw();
         });
     }
-    // public void SaveGrid(){
-    //     savedCells.Clear();
-    //     cells.ForEach(cellRow=>{
-    //         cellRow.ForEach(cell=>{
-    //             if(cell.alive) savedCells.Add(cell);
-    //         });
-    //     });
-    // }
-    // public void LoadGrid(){
-    //     if(savedCells.Count == 0) return;
-    //     ClearGrid();
-    //     savedCells.ForEach(cell=>{
-    //         cell.alive = true;
-    //         cell.Redraw();
-    //     });
-    // }
-    public void ClearGrid(){
-        cells.ForEach(cellRow=>{
-            cellRow.ForEach(cell=>{
-                if(cell.alive){
-                    cell.alive = false;
-                    cell.Redraw();
-                }
-            });
-        });
-    }
     public void HighLightCard(Card card,GridPosition highlightPosition){
         ClearHighlights();
         card.drawCoords.ForEach(position=>{
@@ -169,32 +143,6 @@ public class GridManager : MonoBehaviour
         });
         highlightedCells.Clear();
     }
-    // public void SetGrid(int r, int c){
-    //     DestroyGrid();
-    //     rows = r;
-    //     cols = c;
-    //     DrawGrid();
-    // }
-    // public void DestroyGrid(){
-    //     cells.Clear();
-    //     markedCells.Clear();
-    //     savedCells.Clear();
-    //     highlightedCells.Clear();
-    //     foreach (Transform childCell in transform){
-    //         Destroy(childCell.gameObject);
-    //     }
-    //     transform.position = originalPosition;
-    // }
-    // public void RandomizeGrid(){
-    //     markedCells.Clear();
-    //     cells.ForEach(cellRow=>{
-    //         cellRow.ForEach(cell=>{
-    //             int rand = Random.Range(0,2);
-    //             cell.alive = rand == 0; 
-    //             cell.Redraw();
-    //         });
-    //     });
-    // }
     void OnPlayButtonClick(){
         if(GameManager.currentTurn>GameManager.maxTurn) return;
         _playButton.interactable = false;

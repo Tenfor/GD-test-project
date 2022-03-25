@@ -4,7 +4,6 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     private SpriteRenderer _renderer;
-    private Transform _cells;
     private Vector3 originalPosition;
     private Vector3 targetPosition;
     private bool moveEnabled = false;
@@ -17,13 +16,11 @@ public class Card : MonoBehaviour
     void Start()
     {
         _renderer = GetComponent<SpriteRenderer>();
-        _cells = transform.Find("Cells").GetComponent<Transform>();
-        originalPosition = _cells.position;
     }
     void Update()
     {
         if(moveEnabled){
-            float step =  moveSpeed * Time.deltaTime; // calculate distance to move
+            float step =  moveSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
 
             if (Vector3.Distance(transform.position, targetPosition) < 0.001f)

@@ -11,10 +11,6 @@ public class Cell : MonoBehaviour
         cellAlive = Resources.Load<Sprite>("Images/cellAlive");
         cellDead = Resources.Load<Sprite>("Images/cellDead");
     }
-    // private void OnMouseDown() {
-    //     alive = !alive;
-    //     Redraw();
-    // }
     private void OnMouseOver() {
         GameManager.HighlightCard(gridPosition);
         GameManager.mouseOnGrid = true;
@@ -31,9 +27,6 @@ public class Cell : MonoBehaviour
     public void SetGridPosition(int row, int col){
         gridPosition = new GridPosition(row,col);
     }
-    // public bool CheckGridPosition(int row, int col){
-    //     return gridPosition.row == row && gridPosition.col == col;
-    // }
     public void SetHighlight(bool l){
         highlighted = l;
         Redraw();
